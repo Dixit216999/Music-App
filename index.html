@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stream your favorite music online. Discover new songs, create playlists, and enjoy unlimited music streaming.">
+    <meta name="keywords" content="music, streaming, playlist, songs, artists, albums">
+    <title>Vibefy - Your Ultimate Music Streaming Experience</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="logo">
+                <i class="fas fa-music"></i> Vibefy
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#browse" class="nav-link">Browse</a></li>
+                <li><a href="#playlists" class="nav-link">Playlists</a></li>
+                <li><a href="#artists" class="nav-link">Artists</a></li>
+            </ul>
+
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search songs, artists, albums...">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Experience Music Like Never Before</h1>
+            <p>Stream millions of songs, create your perfect playlist, and discover new artists all in one place.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-play"></i> Start Listening
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-compass"></i> Explore Music
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Songs Section -->
+    <section class="section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Tracks</h2>
+                <a href="#" class="see-all-link">See all <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="grid grid-3" id="featuredGrid">
+                <!-- Featured songs will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Albums Section -->
+    <section class="section" id="albums">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Albums</h2>
+                <a href="#" class="see-all-link">See all <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="grid grid-4" id="albumsGrid">
+                <!-- Albums will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Artists Section -->
+    <section class="section" id="artists">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Top Artists</h2>
+                <a href="#" class="see-all-link">See all <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="grid grid-4" id="artistsGrid">
+                <!-- Artists will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Genre Section -->
+    <section class="section" id="browse">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Genre</h2>
+            </div>
+            <div class="grid grid-4" id="genresGrid">
+                <!-- Genres will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Playlists Section -->
+    <section class="section" id="playlists">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Playlists</h2>
+                <button class="btn btn-primary" id="createPlaylistBtn">
+                    <i class="fas fa-plus"></i> Create Playlist
+                </button>
+            </div>
+            <div class="grid grid-3" id="playlistsGrid">
+                <!-- Playlists will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Queue Section (Hidden by default) -->
+    <section class="section" id="queue" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Queue</h2>
+                <button class="btn btn-secondary" id="clearQueueBtn">
+                    <i class="fas fa-trash"></i> Clear Queue
+                </button>
+            </div>
+            <div id="queueList">
+                <!-- Queue items will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player (Bottom Bar) -->
+    <div class="player">
+        <div class="player-container">
+            <!-- Now Playing -->
+            <div class="now-playing">
+                <div class="now-playing-cover">
+                    <img src="assets/cover_midnight_dreams_1764205675038.png" alt="Album Cover" id="playerCover">
+                </div>
+                <div class="now-playing-info">
+                    <div class="now-playing-title" id="playerTitle">Select a song to play</div>
+                    <div class="now-playing-artist" id="playerArtist">-</div>
+                </div>
+                <button class="favorite-btn" id="favoriteBtn">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="control-btn" id="shuffleBtn">
+                        <i class="fas fa-shuffle"></i>
+                    </button>
+                    <button class="control-btn" id="prevBtn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="control-btn play-pause-btn" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-btn" id="nextBtn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="control-btn" id="repeatBtn">
+                        <i class="fas fa-repeat"></i>
+                    </button>
+                </div>
+                <div class="progress-container">
+                    <span class="time" id="currentTime">0:00</span>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="time" id="duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Volume Controls -->
+            <div class="volume-controls">
+                <button class="volume-btn" id="volumeBtn">
+                    <i class="fas fa-volume-high"></i>
+                </button>
+                <div class="volume-slider" id="volumeSlider">
+                    <div class="volume-fill" id="volumeFill" style="width: 70%;"></div>
+                </div>
+                <button class="control-btn" id="queueBtn">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element (Hidden) -->
+    <audio id="audioPlayer"></audio>
+
+    <!-- Music Attribution Footer -->
+    <div
+        style="position: fixed; bottom: 100px; right: 20px; background: rgba(26, 31, 46, 0.9); padding: 10px 15px; border-radius: 8px; font-size: 0.75rem; color: var(--color-text-muted); max-width: 300px; z-index: 1000;">
+        <div>Music by <a href="https://incompetech.com" target="_blank" rel="noopener"
+                style="color: var(--color-primary);">Kevin MacLeod</a></div>
+        <div>Licensed under Creative Commons: By Attribution 4.0</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
