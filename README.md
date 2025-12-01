@@ -6,7 +6,7 @@
 
 **Beautiful design • Real audio playback • Premium experience**
 
-[Live Demo](#-live-demo) • [Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started)
+[Live Demo](https://dainty-cassata-6a8cf2.netlify.app/) • [Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started)
 
 ![Vibefy Music Player](assets/cover_midnight_dreams_1764205675038.png)
 
@@ -31,7 +31,13 @@
 
 ## 🎬 Live Demo
 
-Open `index.html` in your browser to experience Vibefy:
+**🌐 [View Live App →](https://dainty-cassata-6a8cf2.netlify.app/)**
+
+Experience Vibefy now at [https://dainty-cassata-6a8cf2.netlify.app/](https://dainty-cassata-6a8cf2.netlify.app/)
+
+### Run Locally
+
+You can also run it locally by opening `index.html` in your browser:
 
 ```bash
 # Simply open the file
